@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS pokemons (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    type1 VARCHAR(255) NOT NULL,
+    type2 VARCHAR(255),
+    img_url VARCHAR(255) NOT NULL
+);

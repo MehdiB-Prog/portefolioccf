@@ -1,0 +1,637 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GLOBAL */
+body {
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* CANVAS */
+#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* HEADER */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #4cc3ff;
+  font-size: 28px;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #4cc3ff;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.title {
+  font-size: 60px;
+  color: #6bccff;
+}
+
+.subtitle {
+  margin-top: 20px;
+  font-size: 28px;
+}
+
+.subtext {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* SECTIONS */
+section {
+  padding: 100px 10%;
+}
+
+/* TITRES */
+.section-title {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 40px;
+  color: cyan;
+}
+
+/* ABOUT */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.about-text,
+.about-extra {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.about-text h2,
+.about-extra h3 {
+  color: cyan;
+  margin-bottom: 10px;
+}
+
+/* SKILLS */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.skill-box {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.skill-bar {
+  background: #222;
+  height: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.skill-bar span {
+  display: block;
+  height: 100%;
+  background: cyan;
+}
+
+/* CONTACT */
+.contact-container {
+  text-align: center;
+}
+
+/* PDF BUTTON */
+.btn-pdf {
+  display: inline-block;
+  padding: 10px 15px;
+  background: cyan;
+  color: black;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+/* VEILLE */
+.veille-card {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 15px;
+  line-height: 1.6;
+}
+
+/* ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+}
+#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;              /* ⚠️ change -1 → 0 */
+  pointer-events: none;    /* 🔥 indispensable */
+}
+.navbar {
+  position: fixed;
+  z-index: 9999; /* 🔥 au-dessus de tout */
+}
+/* SECTION PROJETS */
+.projects {
+  padding: 120px 10%;
+  background: #0f1322;
+}
+
+/* GRID */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 25px cyan;
+}
+
+/* IMAGE */
+.project-img {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* TEXTE */
+.project-card h3 {
+  padding: 15px;
+  color: cyan;
+}
+
+.project-card p {
+  padding: 0 15px 15px;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+.skill-box p {
+  margin-top: 10px;
+  font-size: 0.9em;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+/* ===== VEILLE FIX FINAL ===== */
+
+.veille {
+  margin-top: 100px;
+}
+
+/* Centrer le contenu */
+.veille-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Carte principale */
+.veille-card {
+  max-width: 900px;
+  width: 100%;
+  padding: 35px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(0,255,255,0.2);
+  box-shadow: 0 0 20px rgba(0,255,255,0.1);
+}
+
+/* Titre principal */
+.veille-card h3 {
+  text-align: center;
+  font-size: 2em;
+  color: #6bccff;
+  margin-bottom: 25px;
+}
+
+/* Sous titres */
+.veille-card h4 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: cyan;
+  border-left: 4px solid cyan;
+  padding-left: 10px;
+}
+
+/* Paragraphes */
+.veille-card p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+/* Listes */
+.veille-card ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+/* Items */
+.veille-card li {
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+/* Bonus effet hover */
+.veille-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px cyan;
+  transition: 0.3s;
+}
+/* ===== ABOUT EN VERTICAL ===== */
+
+.about-container {
+  display: flex;
+  flex-direction: column;   /* 🔥 IMPORTANT */
+  gap: 40px;
+  max-width: 900px;
+  margin: auto;
+}
+.about-text,
+.about-extra {
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,255,255,0.2);
+  transition: 0.3s;
+}
+
+/* Effet hover */
+.about-text:hover,
+.about-extra:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px cyan;
+}
+/* ===== ABOUT ULTRA STYLÉ ===== */
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Cartes */
+.about-text,
+.about-extra {
+  background: rgba(255,255,255,0.03);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,255,255,0.2);
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+/* Glow animé */
+.about-text::before,
+.about-extra::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,255,255,0.15), transparent 70%);
+  top: -50%;
+  left: -50%;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+/* Hover effet */
+.about-text:hover::before,
+.about-extra:hover::before {
+  opacity: 1;
+}
+
+/* Lift + glow */
+.about-text:hover,
+.about-extra:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 0 25px cyan;
+}
+
+/* Titres */
+.about-text h2,
+.about-extra h3 {
+  color: #6bccff;
+  margin-bottom: 15px;
+  font-size: 1.4em;
+  position: relative;
+}
+
+/* Ligne stylée sous titre */
+.about-text h2::after,
+.about-extra h3::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: cyan;
+  margin-top: 8px;
+}
+
+/* Texte */
+.about-text p,
+.about-extra p {
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* Listes */
+.about-extra ul {
+  margin-left: 20px;
+}
+
+.about-extra li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 15px;
+}
+
+/* Puces stylées */
+.about-extra li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: cyan;
+}
+/* ===== ESPACEMENT TEXTE ===== */
+
+/* Paragraphes */
+.about-text p,
+.about-extra p {
+  margin-bottom: 20px;
+  line-height: 1.8;       /* 🔥 espace entre les lignes */
+  letter-spacing: 0.5px;  /* léger espacement lettres */
+}
+
+/* Listes */
+.about-extra ul {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.about-extra li {
+  margin-bottom: 12px;   /* 🔥 espace entre chaque ligne */
+  line-height: 1.7;
+}
+
+/* Titres */
+.about-text h2,
+.about-extra h3 {
+  margin-bottom: 15px;
+}
+
+/* ===== STYLE PREMIUM ===== */
+
+/* Cartes */
+.about-text,
+.about-extra {
+  background: rgba(255,255,255,0.03);
+  padding: 35px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,255,255,0.2);
+  transition: 0.3s;
+}
+
+/* Hover */
+.about-text:hover,
+.about-extra:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px cyan;
+}
+
+/* Container centré */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;   /* 🔥 espace entre les blocs */
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Section */
+.about {
+  margin-top: 100px;
+}
+/* ===== FIX FINAL ABOUT (FORCE) ===== */
+
+.about-text p,
+.about-extra p {
+  margin-bottom: 25px !important;
+  line-height: 2 !important;       /* 🔥 espace bien visible */
+}
+
+.about-extra li {
+  margin-bottom: 15px !important;
+  line-height: 1.9 !important;
+}
+
+/* espace entre blocs */
+.about-container {
+  gap: 60px !important;
+}
+
+/* espace intérieur */
+.about-text,
+.about-extra {
+  padding: 40px !important;
+}
+/* ===== CONTACT PRO ===== */
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Cartes */
+.contact-card {
+  background: rgba(255,255,255,0.03);
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,255,255,0.2);
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* Hover */
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px cyan;
+}
+
+/* Titres */
+.contact-card h3 {
+  color: #6bccff;
+  margin-bottom: 10px;
+}
+
+/* Texte */
+.contact-card p {
+  opacity: 0.9;
+  line-height: 1.6;
+}
+/* Bouton */
+.btn-image {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background: cyan;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-image:hover {
+  background: #6bccff;
+}
+
+/* Image */
+.veille-image {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.veille-image img {
+  max-width: 700px;
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid rgba(0,255,255,0.2);
+}
+.projects {
+  margin-top: 120px;
+  padding: 40px;
+}
+
+/* Carte projet */
+.project-card {
+  background: rgba(255,255,255,0.05);
+  padding: 35px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,255,255,0.2);
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* Titres */
+.project-card h3 {
+  color: #6bccff;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+/* Texte */
+.project-card p {
+  margin-bottom: 15px;
+}
+
+/* Listes */
+.project-card ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.project-card li {
+  margin-bottom: 10px;
+}
+
+/* Hover stylé */
+.project-card:hover {
+  box-shadow: 0 0 25px cyan;
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+.project-card {
+  backdrop-filter: blur(10px);
+}

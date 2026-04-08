@@ -1,0 +1,532 @@
+/* Reset et base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+
+/* ===== VIDÉO DE FUMÉE ===== */
+.smoke-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    z-index: 1; /* Gardez 1 pour être sous le contenu (navbar + texte) */
+    mix-blend-mode: screen;
+}
+
+/* Assurez-vous que le reste a z-index > 1 */
+.navbar, .hero, .creations, .events, .location {
+    position: relative;
+    z-index: 2; /* Doit être PLUS GRAND que la vidéo */
+}
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #c19a6b;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #c19a6b;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.smoke-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    mix-blend-mode: screen;
+    z-index: 1;
+}
+
+.title {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.sous_title {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+    color: #c19a6b;
+    text-shadow: 1px 1px 5px rgba(204, 165, 91, 0.8);
+}
+
+
+/* Section Créations */
+.creations {
+    padding: 80px 20px;
+    background-color: #111;
+    position: relative;
+    z-index: 2;
+}
+
+.creations h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: #c19a6b;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Grid pour les chichas */
+.chicha-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cards chicha */
+.chicha-card {
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    border: 1px solid #333;
+}
+
+.chicha-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(193, 154, 107, 0.2);
+}
+
+.chicha-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-color: #2a1a0a; /* Couleur de fallback */
+}
+
+.chicha-content {
+    padding: 20px;
+}
+
+.chicha-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.chicha-description {
+    color: #aaa;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.price {
+    display: block;
+    font-weight: bold;
+    color: #c19a6b;
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+.flavor-list {
+    margin-top: 15px;
+}
+
+.flavor-list h4 {
+    color: #c19a6b;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.flavor-list ul {
+    list-style-type: none;
+    color: #ddd;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.flavor-list ul.two-columns {
+    columns: 2;
+    column-gap: 20px;
+}
+
+.extra-option {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.extra-option span {
+    color: #c19a6b;
+    font-weight: bold;
+}
+
+/* Section nourriture */
+.food-section, .dessert-section {
+    background-color: #000;
+}
+
+.food-grid, .dessert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.food-card, .dessert-card {
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+}
+
+.food-card:hover, .dessert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(193, 154, 107, 0.2);
+}
+
+.food-image, .dessert-image {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.food-card h3, .dessert-card h3 {
+    padding: 15px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #fff;
+}
+
+/* Section Boissons hors formule - Version Bulles */
+.Boisson-section {
+    padding: 80px 20px;
+    background-color: #111;
+    position: relative;
+    text-align: center;
+}
+
+.Boisson-section h2 {
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: #c19a6b;
+    font-family: 'Dancing Script', cursive;
+}
+
+.boisson-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.boisson-bubble {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #2a1a0a, #1a1a1a);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border: 2px solid #c19a6b;
+    position: relative;
+    overflow: hidden;
+}
+
+.boisson-bubble:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 20px rgba(193, 154, 107, 0.2);
+}
+
+.boisson-bubble::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    border: 1px solid rgba(193, 154, 107, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.7; }
+    70% { transform: scale(1.1); opacity: 0.2; }
+    100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+.boisson-name {
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 8px;
+    z-index: 2;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.boisson-price {
+    background-color: #c19a6b;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+    .boisson-bubble {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .boisson-name {
+        font-size: 0.9rem;
+    }
+    
+    .boisson-price {
+        font-size: 0.8rem;
+        padding: 3px 8px;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .boisson-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .boisson-card {
+        max-width: 100%;
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .chicha-grid, .food-grid, .dessert-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .flavor-list ul.two-columns {
+        columns: 1;
+    }
+}
+
+/* Section Événements */
+.events {
+    padding: 100px 20px;
+    background-color: #000;
+}
+
+.events h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+}
+
+.event-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.event {
+    min-width: 300px;
+    background: #FF0000;
+    color: white;
+    border: 3px solid #000;
+    padding: 30px;
+    text-align: center;
+}
+
+.event h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.event-date {
+    display: block;
+    background: #000;
+    color: #FFDD00;
+    padding: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Section Localisation */
+.location {
+    padding: 100px 20px;
+    background-color: #111;
+}
+
+.location h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+}
+
+.map-wrapper {
+    height: 400px;
+    max-width: 1000px;
+    margin: 0 auto 50px;
+    border: 3px solid #000;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hours h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+/* Style du bouton */
+
+.snapchat-button {
+    background: #FFFC00; /* Jaune Snapchat */
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.snapchat-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 252, 0, 0.5);
+}
+
+.snap-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Popup QR Code */
+.snapcode-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    z-index: 1000;
+    text-align: center;
+}
+
+.snapcode {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 10px;
+    display: block;
+}
+
+/* Quand on clique sur le bouton */
+.snapcode-popup.active {
+    display: block;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .chicha-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+}

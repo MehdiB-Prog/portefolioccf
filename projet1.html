@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet Pokedex</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #0f172a;
+      color: white;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #38bdf8;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    .screenshots {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .screenshots img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    .note {
+      background: #334155;
+      padding: 15px;
+      border-left: 5px solid #38bdf8;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      background: #38bdf8;
+      color: black;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .back:hover {
+      background: #0ea5e9;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>📱 Projet Pokedex</h1>
+
+    <div class="card">
+      <h2>📌 Présentation</h2>
+      <p>
+        Le projet Pokedex est une application web développée dans le cadre de ma formation en BTS SIO.
+        Il s'agit d'une application dynamique permettant de gérer une base de données de Pokémon.
+      </p>
+      <p>
+        Ce projet m’a permis de mettre en pratique le développement web côté serveur ainsi que la gestion de base de données.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>⚙️ Fonctionnalités</h2>
+      <ul>
+        <li>🔐 Système de gestion des données (CRUD)</li>
+        <li>➕ Ajout de Pokémon</li>
+        <li>✏️ Modification des informations</li>
+        <li>❌ Suppression de Pokémon</li>
+        <li>📋 Affichage des Pokémon sous forme de tableau</li>
+        <li>🔎 Accès aux détails d’un Pokémon</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>💻 Technologies utilisées</h2>
+      <ul>
+        <li>HTML / CSS</li>
+        <li>PHP</li>
+        <li>MySQL</li>
+        <li>UwAmp (serveur local)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>🎯 Compétences développées</h2>
+      <ul>
+        <li>Gestion d’une base de données relationnelle</li>
+        <li>Création d’un CRUD complet</li>
+        <li>Utilisation de requêtes SQL (INSERT, UPDATE, DELETE)</li>
+        <li>Sécurisation des données (injections SQL, gestion des formulaires)</li>
+        <li>Structuration d’une application web</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>📸 Captures d’écran</h2>
+
+      <div class="screenshots">
+        <img src="image/pokemon1.png" alt="Capture 1">
+        <img src="image/pokemon2.png" alt="Capture 2">
+        <img src="image/pokemon3.png" alt="Capture 3">
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>⚠️ Hébergement</h2>
+
+      <div class="note">
+        Ce projet utilise PHP et une base de données MySQL.  
+        Il est donc fonctionnel uniquement en local via UwAmp (ou XAMPP).  
+        GitHub Pages ne supporte que les sites statiques (HTML, CSS, JavaScript), ce qui empêche son hébergement en ligne.
+      </div>
+    </div>
+
+    <a href="projet.html" class="back">⬅ Retour aux projets</a>
+
+  </div>
+
+</body>
+</html>
